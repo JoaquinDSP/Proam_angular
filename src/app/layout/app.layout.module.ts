@@ -15,6 +15,7 @@ import { AppConfigModule } from './config/config.module';
 import { AppSidebarComponent } from "./app.sidebar.component";
 import { AppLayoutComponent } from "./app.layout.component";
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         CommonModule,
+        RouterModule, //added 15:50
         FormsModule,
         HttpClientModule,
         InputTextModule,
@@ -35,7 +37,6 @@ import { CommonModule } from '@angular/common';
         RadioButtonModule,
         InputSwitchModule,
         RippleModule,
-        RouterModule,
         AppConfigModule
     ],
     exports: [AppLayoutComponent]
