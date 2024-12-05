@@ -1,7 +1,10 @@
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> <!-- Import logo font -->
+
 <div class="layout-topbar">
     <a class="layout-topbar-logo" routerLink="">
         <img src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
-        <span>SAKAI</span>
+       
+        <span style="font-family: 'Righteous', sans-serif;">DE CAMPO</span>
     </a>
 
     <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
