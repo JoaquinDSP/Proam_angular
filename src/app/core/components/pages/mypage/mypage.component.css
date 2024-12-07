@@ -1,0 +1,53 @@
+/* Contenedor principal */
+.image-container {
+  position: relative; 
+  width: 100%;
+  aspect-ratio: 24 / 4; 
+  overflow: hidden; 
+}
+
+/* Fondo con imagen */
+.bckgnd {
+  position: absolute; /* Se posiciona respecto al contenedor */
+  top: 0%; /* Mueve la imagen un 20% hacia abajo desde la parte superior del contenedor */
+  left: 0; /* Alineado con la parte izquierda */
+  width: 100%; /* Rellena el contenedor */
+  height: 100%; /* Rellena el contenedor */
+  object-fit: cover; /* Ajusta la imagen sin distorsión */
+  animation: slideIn 1.2s ease-out forwards; /* Animación de entrada */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); 
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+/* escudo */
+.escudo {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); /* Ajusta el escudo para que esté perfectamente centrado */
+  width: 16%; /* Proporcional al contenedor */
+  height: auto; /* Mantiene la proporción */
+  animation: slideInesc 1s ease-out forwards; /* Animación de entrada */
+}
+@keyframes slideInesc {
+  0% {
+    transform: translateX(400%); 
+    transform: translatey(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50); 
+    opacity: 90;
+  }
+  100% {
+    transform: translateX(-50); 
+  }
+}
