@@ -18,6 +18,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ScrollComponent } from '../components/scroll/scroll.component';
 import { PositionsComponent } from '../components/positions/positions.component';
+import { SignComponent } from '../components/sign/sign.component';
+import { CheckboxModule } from 'primeng/checkbox';
+
 
 @NgModule({
     declarations: [
@@ -28,6 +31,7 @@ import { PositionsComponent } from '../components/positions/positions.component'
         AppSidebarComponent,
         AppLayoutComponent,
     ],
+
     imports: [
         CommonModule,
         RouterModule, 
@@ -41,7 +45,9 @@ import { PositionsComponent } from '../components/positions/positions.component'
         RippleModule,
         AppConfigModule,
         ScrollComponent,
-        PositionsComponent
+        PositionsComponent,
+        CheckboxModule,
+        SignComponent
     ],
     exports: [AppLayoutComponent]
 })
