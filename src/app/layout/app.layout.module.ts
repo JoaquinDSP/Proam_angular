@@ -16,6 +16,8 @@ import { AppSidebarComponent } from "./app.sidebar.component";
 import { AppLayoutComponent } from "./app.layout.component";
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ScrollComponent } from '../components/scroll/scroll.component';
+import { PositionsComponent } from '../components/positions/positions.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,7 @@ import { RouterModule } from '@angular/router';
     ],
     imports: [
         CommonModule,
-        RouterModule, //added 15:50
+        RouterModule, 
         FormsModule,
         HttpClientModule,
         InputTextModule,
@@ -37,7 +39,9 @@ import { RouterModule } from '@angular/router';
         RadioButtonModule,
         InputSwitchModule,
         RippleModule,
-        AppConfigModule
+        AppConfigModule,
+        ScrollComponent,
+        PositionsComponent
     ],
     exports: [AppLayoutComponent]
 })
