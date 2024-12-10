@@ -8,6 +8,12 @@ import { LayoutService } from "./service/app.layout.service";
 })
 export class AppTopBarComponent {
 
+    showAppSign : boolean = false;
+
+    togleAppSign(){
+        this.showAppSign = !this.showAppSign;
+    }
+
     items!: MenuItem[];
 
     @ViewChild('menubutton') menuButton!: ElementRef;

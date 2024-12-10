@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
-
-
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign',

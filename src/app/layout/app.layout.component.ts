@@ -12,14 +12,14 @@ import { AppTopBarComponent } from './app.topbar.component';
 export class AppLayoutComponent implements OnDestroy {
 
     overlayMenuOpenSubscription: Subscription;
-
     menuOutsideClickListener: any;
-
     profileMenuOutsideClickListener: any;
 
     @ViewChild(AppSidebarComponent) appSidebar!: AppSidebarComponent;
-
     @ViewChild(AppTopBarComponent) appTopbar!: AppTopBarComponent;
+
+    // Propiedad para controlar la visibilidad de <app-sign>
+    showAppSign: boolean = false;
 
     constructor(public layoutService: LayoutService, public renderer: Renderer2, public router: Router) {
         this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
@@ -55,6 +55,10 @@ export class AppLayoutComponent implements OnDestroy {
                 this.hideMenu();
                 this.hideProfileMenu();
             });
+    }
+
+    toggleAppSign() {
+        this.showAppSign = !this.showAppSign;
     }
 
     hideMenu() {

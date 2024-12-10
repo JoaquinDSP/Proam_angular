@@ -1,9 +1,9 @@
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> <!-- Import logo font -->
-
 <div class="layout-topbar">
+
+    <app-sign *ngIf="showAppSign"></app-sign>
+
     <a class="layout-topbar-logo" routerLink="">
         <img src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
-       
         <span style="font-family: 'Righteous', sans-serif;">LIGA DE CAMPO</span>
     </a>
 
@@ -20,7 +20,7 @@
             <i class="pi pi-calendar"></i>
             <span>Calendar</span>
         </button>
-        <button class="p-link layout-topbar-button">
+        <button class="p-link layout-topbar-button" (click)="togleAppSign()">
             <i class="pi pi-user"></i>
             <span>Profile</span>
         </button>
@@ -29,4 +29,8 @@
             <span>Settings</span>
         </button>
     </div>
+    
+    <app-sign *ngIf="showAppSign"></app-sign>
+
 </div>
+
