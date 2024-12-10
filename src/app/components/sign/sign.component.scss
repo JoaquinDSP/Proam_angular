@@ -1,11 +1,17 @@
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .surface-card {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    max-width: 50%; /* Opcional, para limitar el ancho máximo */
-  
+    max-width: 500px;
+   
     @media (max-width: 768px) { 
       max-width: 88%; 
     }
@@ -16,12 +22,25 @@
     font-size: 16px; 
 }
 
-.background-blur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1200px;
-    height: 1200px;
-    background-color: #ff00005d; /* Color del cuadrado */
-    z-index: 999; /* Asegura que el cuadrado quede detrás del formulario */
-    }
+.close-button {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  padding: 10px; /* Espaciado alrededor del ícono */
+  font-size: 24px; /* Tamaño del ícono */
+  color: #333; /* Color por defecto (modo claro) */
+  cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+  transition: color 0.3s ease; /* Efecto suave al pasar el cursor */
+}
+
+/* Cambia el color del ícono en modo oscuro */
+body.dark-theme .close-button i {
+  color: #f8f9fa; /* Color blanco en modo oscuro */
+}
+
+.close-button:hover {
+  color: #dc3545; /* Rojo cuando pasa el cursor */
+}
+
+body.dark-theme .close-button:hover i {
+  color: #dc3545; /* Rojo en modo oscuro también */
+}

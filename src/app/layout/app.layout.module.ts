@@ -20,6 +20,8 @@ import { ScrollComponent } from '../components/scroll/scroll.component';
 import { PositionsComponent } from '../components/positions/positions.component';
 import { SignComponent } from '../components/sign/sign.component';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
+import { StyleClassModule } from 'primeng/styleclass';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { CheckboxModule } from 'primeng/checkbox';
         AppMenuComponent,
         AppSidebarComponent,
         AppLayoutComponent,
+
     ],
 
     imports: [
@@ -47,7 +50,10 @@ import { CheckboxModule } from 'primeng/checkbox';
         ScrollComponent,
         PositionsComponent,
         CheckboxModule,
-        SignComponent
+        SignComponent,
+        ButtonModule,
+        StyleClassModule
+
     ],
     exports: [AppLayoutComponent]
 })
