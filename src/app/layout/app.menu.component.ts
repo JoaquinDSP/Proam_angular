@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { LayoutService } from './service/app.layout.service';
+import { UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -106,17 +107,12 @@ export class AppMenuComponent implements OnInit {
       {
         label: 'Documentos',
         items: [
-          {
-            label: 'Reglameto',
-            icon: 'fa-solid fa-gavel',
-            routerLink: ['/uikit/formlayout'],
-          },
-          {
-            label: 'Boletin',
-            icon: 'fa-solid fa-newspaper',
-            url: ['https://www.sensacine.com/peliculas/pelicula-111112/'],
-            target: '_self',
-          },
+        {
+          label: 'Reglamento',
+          icon: 'fa-solid fa-gavel',
+          url: 'assets/PDF/reglamento abogados.pdf', 
+          target: '_blank',  
+        },
         ],
       },
       {
@@ -151,21 +147,26 @@ export class AppMenuComponent implements OnInit {
                         target: '_blank'
                     },
                     
-          {
-            label: 'Email',
-                        icon: 'fa-regular fa-envelope',
-                        url: 'https://wa.me/+5493413139012?text=%C2%A1Hola!%20Me%20comunico%20con%20Liga%20de%20Campo%20a%20fines%20de%20acercarles%20una%20consulta.',
-                        target: '_blank'
-          },
+                    {
+                      label: 'Email',
+                      icon: 'fa-regular fa-envelope',
+                      url: 'mailto:soporte@ligadecampo.com?subject=Consulta&body=%C2%A1Hola!%20Me%20comunico%20con%20Liga%20de%20Campo%20a%20fines%20de%20acercarles%20una%20consulta.',
+                      target: '_blank'
+                    },
+                    
           {
             label: 'Instagram',
             icon: 'fa-brands fa-instagram',
-            routerLink: ['/notfound'],
+            url: 'https://www.instagram.com/joa.spretz/',
+            target: '_blank'
+
           },
           {
             label: 'Facebook',
             icon: 'fa-brands fa-facebook',
-            routerLink: ['/notfound'],
+            url: 'https://www.facebook.com/joa.spretz',
+            target: '_blank'
+
           },
         ],
       },
