@@ -4,31 +4,58 @@ import { filter, Subscription } from 'rxjs';
 import { LayoutService } from "./service/app.layout.service";
 import { AppSidebarComponent } from "./app.sidebar.component";
 import { AppTopBarComponent } from './app.topbar.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
     selector: 'app-layout',
-    templateUrl: './app.layout.component.html'
+    templateUrl: './app.layout.component.html',
 })
 export class AppLayoutComponent implements OnDestroy {
+
+    teamsSet: string[] = [
+        'assets/layout/images/teams/decampo_team.svg',
+        'assets/layout/images/teams/el_taller.svg',
+        'assets/layout/images/teams/los_eternos.svg',
+        'assets/layout/images/teams/todo_cerdo.svg',
+        'assets/layout/images/teams/los_pelachos.svg',
+        'assets/layout/images/teams/winners.svg',
+        'assets/layout/images/teams/futbol_agrofe.svg',
+
+
+    ];
+    
+    sponsorsSet: string[] = [
+        'assets/layout/images/sponsors/cifad.png',
+        'assets/layout/images/sponsors/exclusive.png',
+        'assets/layout/images/sponsors/ideal.png',
+        'assets/layout/images/sponsors/agrofe.svg',
+        'assets/layout/images/sponsors/snoopy.png',
+        'assets/layout/images/sponsors/silcolor.png',
+    ];
 
     overlayMenuOpenSubscription: Subscription;
     menuOutsideClickListener: any;
     profileMenuOutsideClickListener: any;
-    
 
     @ViewChild(AppSidebarComponent) appSidebar!: AppSidebarComponent;
     @ViewChild(AppTopBarComponent) appTopbar!: AppTopBarComponent;
 
-    // control <app-sign> property
     showAppSign: boolean = false;
 
-    constructor(public layoutService: LayoutService, public renderer: Renderer2, public router: Router) {
+    constructor(
+        public layoutService: LayoutService,
+        public renderer: Renderer2,
+        public router: Router
+    ) {
+        // Se subscrive a los cambios de menú
         this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
             if (!this.menuOutsideClickListener) {
                 this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
-                    const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target) 
-                        || this.appTopbar.menuButton.nativeElement.isSameNode(event.target) || this.appTopbar.menuButton.nativeElement.contains(event.target));
+                    const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || 
+                                              this.appSidebar.el.nativeElement.contains(event.target) ||
+                                              this.appTopbar.menuButton.nativeElement.isSameNode(event.target) || 
+                                              this.appTopbar.menuButton.nativeElement.contains(event.target));
                     
                     if (isOutsideClicked) {
                         this.hideMenu();
@@ -38,8 +65,10 @@ export class AppLayoutComponent implements OnDestroy {
 
             if (!this.profileMenuOutsideClickListener) {
                 this.profileMenuOutsideClickListener = this.renderer.listen('document', 'click', event => {
-                    const isOutsideClicked = !(this.appTopbar.menu.nativeElement.isSameNode(event.target) || this.appTopbar.menu.nativeElement.contains(event.target)
-                        || this.appTopbar.topbarMenuButton.nativeElement.isSameNode(event.target) || this.appTopbar.topbarMenuButton.nativeElement.contains(event.target));
+                    const isOutsideClicked = !(this.appTopbar.menu.nativeElement.isSameNode(event.target) || 
+                                              this.appTopbar.menu.nativeElement.contains(event.target) ||
+                                              this.appTopbar.topbarMenuButton.nativeElement.isSameNode(event.target) || 
+                                              this.appTopbar.topbarMenuButton.nativeElement.contains(event.target));
 
                     if (isOutsideClicked) {
                         this.hideProfileMenu();

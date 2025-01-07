@@ -6,8 +6,9 @@
     <div class="layout-main-container">
         <div class="layout-main">
             <router-outlet></router-outlet>
-            <app-scroll></app-scroll>
+            <app-scroll [logos]="teamsSet"></app-scroll>            
             <app-positions></app-positions>
+            <app-scroll [logos]="sponsorsSet"></app-scroll>
             <app-footer></app-footer>
             
     <app-config></app-config>
