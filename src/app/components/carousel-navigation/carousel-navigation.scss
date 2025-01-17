@@ -1,0 +1,56 @@
+// Importar Bootstrap y Bootstrap Icons
+// @import "node_modules/bootstrap/scss/bootstrap";
+// @import "~bootstrap-icons/font/bootstrap-icons.css";
+
+// // Estilos generales para tablas ordenables
+// th[sortable] {
+//   cursor: pointer;
+//   user-select: none;
+//   -webkit-user-select: none;
+
+//   &.desc:before,
+//   &.asc:before {
+//     content: '';
+//     display: block;
+//     // Puedes usar una imagen personalizada descomentando la línea siguiente:
+//     // background: url('data:image/png;base64,...') no-repeat;
+//     // background-size: 22px;
+//     width: 22px;
+//     height: 22px;
+//     float: left;
+//     margin-left: -22px;
+//   }
+
+//   &.desc:before {
+//     transform: rotate(180deg);
+//     -ms-transform: rotate(180deg);
+//   }
+// }
+
+// // Resaltar en la tabla filtrada
+// ngbd-table-filtering span.ngb-highlight {
+//   background-color: yellow;
+// }
+
+// // Resaltar en la tabla completa
+// ngbd-table-complete span.ngb-highlight {
+//   background-color: yellow;
+// }
+
+//  Estilos específicos para el carousel
+// ngb-carousel {
+//   .picsum-img-wrapper {
+//     position: relative;
+//     height: 0;
+//     padding-top: 55%; // Mantener relación de aspecto para imágenes 900x500
+
+//     > img {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       bottom: 0;
+//       right: 0;
+//     }
+//   }
+// width: 100%;
+//  }

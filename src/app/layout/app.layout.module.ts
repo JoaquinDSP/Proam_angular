@@ -22,8 +22,7 @@ import { SignComponent } from '../components/sign/sign.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
-import { RendersComponent  } from '../components/renders/renders.component';
-import { GalleriaModule } from 'primeng/galleria';
+import { NgbdCarouselNavigation } from "../components/carousel-navigation/carousel-navigation";
 
 @NgModule({
     declarations: [
@@ -54,7 +53,7 @@ import { GalleriaModule } from 'primeng/galleria';
         SignComponent,
         ButtonModule,
         StyleClassModule,
-        RendersComponent,
+        NgbdCarouselNavigation,
 
     ],
     exports: [AppLayoutComponent]
