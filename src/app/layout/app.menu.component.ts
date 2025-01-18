@@ -21,6 +21,7 @@ interface Categoria {
   templateUrl: './app.menu.component.html',
 })
 export class AppMenuComponent implements OnInit {
+  
   model: any[] = []; // Estructura del menú
   categorias$: Observable<Categoria[]>; // Observable para las categorías
 
